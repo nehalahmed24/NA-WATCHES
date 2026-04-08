@@ -14,6 +14,25 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="loader-content">
+            <div class="loader-logo">NA WATCHES</div>
+            <div class="loader-bar"></div>
+        </div>
+    </div>
+
+    <!-- Background Elements -->
+    <div class="bg-gradient-overlay"></div>
+    <div class="bg-noise"></div>
+    <div class="bg-spheres">
+        <div class="sphere sphere-1"></div>
+        <div class="sphere sphere-2"></div>
+        <div class="sphere sphere-3"></div>
+    </div>
+
+    <!-- Custom Cursor removed -->
+
     <header class="navbar" id="navbar">
         <div class="container">
             <a href="#" class="logo">NA WATCHES</a>
@@ -23,7 +42,10 @@
                 <a href="#contact">Contact</a>
             </nav>
             <div class="nav-actions">
-                <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <div class="search-wrapper" id="search-wrapper">
+                    <input type="text" class="search-input" id="search-input" placeholder="Search...">
+                    <button class="search-btn" id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
                 <button class="cart-btn"><i class="fa-solid fa-bag-shopping"></i><span>0</span></button>
                 <button class="menu-toggle"><i class="fa-solid fa-bars"></i></button>
             </div>
@@ -35,13 +57,12 @@
         <section class="hero" id="home">
             <div class="hero-overlay"></div>
             <div class="container">
-                <div class="hero-content" data-aos="fade-up">
+                <div class="hero-content hero-centered" data-aos="fade-up">
                     <span class="subtitle">Excellence in every second</span>
-                    <h1>Precision Reinvented</h1>
+                    <h1>Luxury watches for every moment</h1>
                     <p>Engineered for the bold. Designed for the eternal. Experience the culmination of Swiss craftsmanship and modern innovation.</p>
                     <div class="hero-btns">
-                        <a href="#collections" class="btn btn-primary">Shop Collection</a>
-                        <a href="#about" class="btn btn-outline">Explore Heritage</a>
+                        <a href="#collections" class="btn btn-primary">Shop Now</a>
                     </div>
                 </div>
             </div>
@@ -76,7 +97,7 @@
         <section class="collections" id="collections">
             <div class="container">
                 <div class="section-header">
-                    <h2>Our Signature Pieces</h2>
+                    <h2>Timeless collections</h2>
                     <p>Hand-picked selections from our latest masterworks.</p>
                 </div>
                 
@@ -186,9 +207,9 @@
                 </div>
                 <div class="footer-contact">
                     <h4>Contact Us</h4>
-                    <p><i class="fa-solid fa-location-dot"></i> Rue du Rhône, Geneva</p>
-                    <p><i class="fa-solid fa-phone"></i> +41 22 123 4567</p>
-                    <p><i class="fa-solid fa-envelope"></i> boutique@chronos.com</p>
+                    <p><i class="fa-solid fa-location-dot"></i> f3/1479 shah faisal colony 3</p>
+                    <p><i class="fa-solid fa-phone"></i> 03062909400</p>
+                    <p><i class="fa-solid fa-envelope"></i> nehalkhan033028@gmail.com</p>
                 </div>
             </div>
             <div class="footer-bottom">

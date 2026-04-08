@@ -1,4 +1,41 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // 0. Preloader Logic
+    const preloader = document.getElementById('preloader');
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            preloader.classList.add('fade-out');
+        }, 1000);
+    });
+
+    // JavaScript Logic for the website
+
+    // 0.2 Search Toggle Logic
+    const searchBtn = document.getElementById('search-btn');
+    const searchWrapper = document.getElementById('search-wrapper');
+    const searchInput = document.getElementById('search-input');
+
+    if (searchBtn && searchWrapper) {
+        searchBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            searchWrapper.classList.toggle('active');
+            if (searchWrapper.classList.contains('active')) {
+                searchInput.focus();
+            }
+        });
+
+        // Close search when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!searchWrapper.contains(e.target) && searchWrapper.classList.contains('active')) {
+                searchWrapper.classList.remove('active');
+            }
+        });
+
+        // Prevent closing when clicking inside the input
+        searchInput.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+    }
+
     // 1. Navbar Scroll Effect
     const navbar = document.getElementById('navbar');
     
@@ -109,15 +146,39 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 6. Parallax effect for Hero (Subtle)
+    // 6. Parallax effect for Hero (Enhanced)
     const hero = document.querySelector('.hero');
+    const heroContent = document.querySelector('.hero-content');
     window.addEventListener('scroll', () => {
         const scroll = window.pageYOffset;
         if (hero) {
-            hero.style.backgroundPositionY = `${scroll * 0.5}px`;
+            hero.style.backgroundPositionY = `${scroll * 0.7}px`;
+            if(heroContent) {
+                heroContent.style.transform = `translateY(${scroll * 0.3}px)`;
+                heroContent.style.opacity = 1 - (scroll / 800);
+            }
         }
     });
 
-    // 7. Initialize Scroll Animation manually for Hero if needed
-    // (AOS usually handles this via IntersectionObserver)
+    // 7. Watch Card Tilt Effect (Subtle)
+    const cards = document.querySelectorAll('.watch-card');
+    cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const rotateX = (y - centerY) / 20;
+            const rotateY = (centerX - x) / 20;
+            
+            card.style.transform = `perspective(1000px) scale(1.05) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = `perspective(1000px) scale(1) rotateX(0) rotateY(0)`;
+        });
+    });
 });
