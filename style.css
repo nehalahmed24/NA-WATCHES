@@ -1,18 +1,11 @@
 :root {
-    --primary: #D4AF37; /* Rich Gold */
-    --primary-rgb: 212, 175, 55;
+    --primary: #D4AF37; /* Pure Gold */
     --primary-light: #E5C366;
-    --bg-dark: #000000; /* Pure Black */
-    --bg-card: rgba(20, 20, 20, 0.7);
-    --text-main: #ffffff; /* pure white */
-    --text-muted: rgba(255, 255, 255, 0.6);
-    --accent: #B08D26;
-    --radius-sm: 4px;
-    --radius-md: 12px;
-    --radius-lg: 24px;
-    --container-width: 1240px;
+    --bg-dark: #000000;
+    --text-white: #ffffff;
+    --text-muted: rgba(255, 255, 255, 0.5);
+    --border-color: rgba(255, 255, 255, 0.1);
     --transition: cubic-bezier(0.23, 1, 0.32, 1);
-    --glow: 0 0 20px rgba(212, 175, 55, 0.3);
 }
 
 /* --- Preloader --- */
@@ -159,6 +152,13 @@ body {
     overflow-x: hidden;
     line-height: 1.6;
     width: 100%;
+    position: relative;
+}
+
+img, video, canvas, svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 h1, h2, h3, h4, .logo {
@@ -222,12 +222,11 @@ ul {
 }
 
 .logo {
-    font-size: 1.8rem;
-    letter-spacing: 4px;
-    background: linear-gradient(135deg, var(--primary), #fff);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-size: 1.6rem;
+    letter-spacing: 6px;
+    color: var(--text-white);
+    font-weight: 700;
+    text-transform: uppercase;
     cursor: pointer;
 }
 
@@ -375,15 +374,17 @@ ul {
 }
 
 .hero h1 {
-    font-size: clamp(3rem, 10vw, 5.5rem);
-    line-height: 0.95;
-    margin-bottom: 2rem;
+    font-size: clamp(3rem, 10vw, 4.5rem);
+    line-height: 1.1;
+    margin-bottom: 2.5rem;
     color: #fff;
-    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    animation: reveal-hero-text 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
-    animation-delay: 1.2s;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 2px;
+    animation: reveal-hero-text 1.2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+    animation-delay: 1s;
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
 }
 
 @keyframes reveal-hero-text {
@@ -409,10 +410,11 @@ ul {
 }
 
 .hero p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin-bottom: 2.5rem;
     max-width: 500px;
     color: var(--text-muted);
+    letter-spacing: 1px;
 }
 
 .hero-content.hero-centered p {
@@ -430,12 +432,12 @@ ul {
 
 /* Buttons */
 .btn {
-    padding: 1.2rem 2.5rem;
-    border-radius: var(--radius-sm);
-    font-weight: 700;
+    padding: 1rem 3rem;
+    border-radius: 0;
+    font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 0.85rem;
+    letter-spacing: 3px;
+    font-size: 0.75rem;
     cursor: pointer;
     transition: all 0.4s var(--transition);
     display: inline-block;
@@ -592,18 +594,15 @@ ul {
 }
 
 .watch-card {
-    background: var(--bg-card);
-    border-radius: var(--radius-md);
+    background: transparent;
     overflow: hidden;
-    transition: transform 0.6s var(--transition), box-shadow 0.6s var(--transition), border-color 0.6s var(--transition);
+    transition: transform 0.8s var(--transition);
     position: relative;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .watch-card:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+    transform: translateY(-5px);
 }
 
 .watch-img {
@@ -638,7 +637,7 @@ ul {
 }
 
 .watch-info {
-    padding: 2rem;
+    padding: 2.5rem 1rem;
     text-align: center;
 }
 
@@ -665,23 +664,23 @@ ul {
 }
 
 .btn-card {
-    width: 100%;
-    padding: 1rem;
+    width: auto;
+    padding: 0.8rem 2rem;
     background: transparent;
-    border: 1px solid var(--primary);
-    color: var(--primary);
-    font-weight: 700;
+    border: 1px solid var(--text-white);
+    color: var(--text-white);
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    font-size: 0.75rem;
     cursor: pointer;
     transition: all 0.3s;
-    border-radius: var(--radius-sm);
+    border-radius: 0;
 }
 
 .btn-card:hover {
-    background: var(--primary);
+    background: var(--text-white);
     color: #000;
-    box-shadow: var(--glow);
 }
 
 /* Heritage Section */
