@@ -1,11 +1,17 @@
 :root {
-    --primary: #D4AF37; /* Pure Gold */
-    --primary-light: #E5C366;
-    --bg-dark: #000000;
-    --text-white: #ffffff;
-    --text-muted: rgba(255, 255, 255, 0.5);
-    --border-color: rgba(255, 255, 255, 0.1);
+    --primary: hsl(43, 52%, 51%); /* Goldish */
+    --primary-light: hsl(43, 60%, 65%);
+    --bg-dark: hsl(220, 15%, 5%); /* Deeper Black */
+    --bg-card: hsla(220, 15%, 12%, 0.6);
+    --text-main: hsl(210, 100%, 100%);
+    --text-muted: hsla(210, 20%, 98%, 0.5);
+    --accent: hsl(43, 52%, 40%);
+    --radius-sm: 4px;
+    --radius-md: 12px;
+    --radius-lg: 24px;
+    --container-width: 1240px;
     --transition: cubic-bezier(0.23, 1, 0.32, 1);
+    --glow: 0 0 20px hsla(43, 52%, 51%, 0.2);
 }
 
 /* --- Preloader --- */
@@ -222,11 +228,12 @@ ul {
 }
 
 .logo {
-    font-size: 1.6rem;
-    letter-spacing: 6px;
-    color: var(--text-white);
-    font-weight: 700;
-    text-transform: uppercase;
+    font-size: 1.8rem;
+    letter-spacing: 4px;
+    background: linear-gradient(135deg, var(--primary), #fff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     cursor: pointer;
 }
 
@@ -410,11 +417,10 @@ ul {
 }
 
 .hero p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     margin-bottom: 2.5rem;
     max-width: 500px;
     color: var(--text-muted);
-    letter-spacing: 1px;
 }
 
 .hero-content.hero-centered p {
@@ -432,12 +438,12 @@ ul {
 
 /* Buttons */
 .btn {
-    padding: 1rem 3rem;
-    border-radius: 0;
-    font-weight: 500;
+    padding: 1.2rem 2.5rem;
+    border-radius: var(--radius-sm);
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size: 0.75rem;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
     cursor: pointer;
     transition: all 0.4s var(--transition);
     display: inline-block;
@@ -579,7 +585,20 @@ ul {
 
 .section-header h2 {
     font-size: clamp(2rem, 5vw, 3.5rem);
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 1.5rem;
+}
+
+.section-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 1px;
+    background: #fff;
 }
 
 .section-header p {
@@ -594,15 +613,18 @@ ul {
 }
 
 .watch-card {
-    background: transparent;
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
     overflow: hidden;
-    transition: transform 0.8s var(--transition);
+    transition: transform 0.6s var(--transition), box-shadow 0.6s var(--transition), border-color 0.6s var(--transition);
     position: relative;
-    border-bottom: 1px solid var(--border-color);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
 }
 
 .watch-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-15px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
 }
 
 .watch-img {
@@ -637,7 +659,7 @@ ul {
 }
 
 .watch-info {
-    padding: 2.5rem 1rem;
+    padding: 2rem;
     text-align: center;
 }
 
@@ -664,23 +686,23 @@ ul {
 }
 
 .btn-card {
-    width: auto;
-    padding: 0.8rem 2rem;
+    width: 100%;
+    padding: 1rem;
     background: transparent;
-    border: 1px solid var(--text-white);
-    color: var(--text-white);
-    font-weight: 600;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 0.75rem;
+    letter-spacing: 1px;
     cursor: pointer;
     transition: all 0.3s;
-    border-radius: 0;
+    border-radius: var(--radius-sm);
 }
 
 .btn-card:hover {
-    background: var(--text-white);
+    background: var(--primary);
     color: #000;
+    box-shadow: var(--glow);
 }
 
 /* Heritage Section */
@@ -691,7 +713,19 @@ ul {
 
 .heritage-content h2 {
     font-size: clamp(2rem, 5vw, 3rem);
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
+    position: relative;
+    padding-bottom: 1.5rem;
+}
+
+.heritage-content h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 1px;
+    background: #fff;
 }
 
 .heritage-content p {
