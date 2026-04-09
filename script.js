@@ -36,6 +36,35 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // 0.3 Mobile Drawer Logic
+    const menuToggle = document.getElementById('menu-toggle');
+    const closeDrawer = document.getElementById('close-drawer');
+    const mobileDrawer = document.getElementById('mobile-drawer');
+    const drawerOverlay = document.getElementById('drawer-overlay');
+    const drawerLinks = document.querySelectorAll('.drawer-links a');
+
+    const toggleDrawer = (open) => {
+        mobileDrawer.classList.toggle('open', open);
+        drawerOverlay.classList.toggle('active', open);
+        document.body.style.overflow = open ? 'hidden' : ''; // Prevent scroll
+    };
+
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => toggleDrawer(true));
+    }
+
+    if (closeDrawer) {
+        closeDrawer.addEventListener('click', () => toggleDrawer(false));
+    }
+
+    if (drawerOverlay) {
+        drawerOverlay.addEventListener('click', () => toggleDrawer(false));
+    }
+
+    drawerLinks.forEach(link => {
+        link.addEventListener('click', () => toggleDrawer(false));
+    });
+
     // 1. Navbar Scroll Effect
     const navbar = document.getElementById('navbar');
     
