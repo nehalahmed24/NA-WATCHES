@@ -1,15 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 0. Preloader Logic
+    // 1. Preloader Logic
     const preloader = document.getElementById('preloader');
-    window.addEventListener('load', () => {
-        setTimeout(() => {
-            preloader.classList.add('fade-out');
-        }, 1000);
+    if (preloader) {
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                preloader.classList.add('fade-out');
+            }, 800);
+        });
+    }
+
+    // 2. Navbar Scroll Effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 40) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
     });
 
-    // JavaScript Logic for the website
-
-    // 0.2 Search Toggle Logic
+    // 3. Search Toggle Logic
     const searchBtn = document.getElementById('search-btn');
     const searchWrapper = document.getElementById('search-wrapper');
     const searchInput = document.getElementById('search-input');
@@ -23,20 +33,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Close search when clicking outside
         document.addEventListener('click', (e) => {
             if (!searchWrapper.contains(e.target) && searchWrapper.classList.contains('active')) {
                 searchWrapper.classList.remove('active');
             }
         });
-
-        // Prevent closing when clicking inside the input
-        searchInput.addEventListener('click', (e) => {
-            e.stopPropagation();
-        });
     }
 
-    // 0.3 Mobile Drawer Logic
+    // 4. Mobile Drawer Logic
     const menuToggle = document.getElementById('menu-toggle');
     const closeDrawer = document.getElementById('close-drawer');
     const mobileDrawer = document.getElementById('mobile-drawer');
@@ -44,41 +48,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const drawerLinks = document.querySelectorAll('.drawer-links a');
 
     const toggleDrawer = (open) => {
-        mobileDrawer.classList.toggle('open', open);
-        drawerOverlay.classList.toggle('active', open);
-        document.body.style.overflow = open ? 'hidden' : ''; // Prevent scroll
+        if (mobileDrawer) mobileDrawer.classList.toggle('open', open);
+        if (drawerOverlay) drawerOverlay.classList.toggle('active', open);
+        document.body.style.overflow = open ? 'hidden' : '';
     };
 
-    if (menuToggle) {
-        menuToggle.addEventListener('click', () => toggleDrawer(true));
-    }
-
-    if (closeDrawer) {
-        closeDrawer.addEventListener('click', () => toggleDrawer(false));
-    }
-
-    if (drawerOverlay) {
-        drawerOverlay.addEventListener('click', () => toggleDrawer(false));
-    }
+    if (menuToggle) menuToggle.addEventListener('click', () => toggleDrawer(true));
+    if (closeDrawer) closeDrawer.addEventListener('click', () => toggleDrawer(false));
+    if (drawerOverlay) drawerOverlay.addEventListener('click', () => toggleDrawer(false));
 
     drawerLinks.forEach(link => {
         link.addEventListener('click', () => toggleDrawer(false));
     });
 
-    // 1. Navbar Scroll Effect
-    const navbar = document.getElementById('navbar');
-    
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
-
-    // 2. Intersection Observer for AOS (Animate on Scroll)
+    // 5. Intersection Observer for AOS
     const observersOptions = {
-        threshold: 0.1,
+        threshold: 0.15,
         rootMargin: '0px 0px -50px 0px'
     };
 
@@ -86,75 +71,64 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-                // Unobserve after animation triggered
-                // observer.unobserve(entry.target); 
             }
         });
     }, observersOptions);
 
     const animatedElements = document.querySelectorAll('[data-aos]');
-    animatedElements.forEach(el => {
-        observer.observe(el);
-        // Apply individual delays if specified
-        const delay = el.getAttribute('data-aos-delay');
-        if (delay) {
-            el.style.transitionDelay = `${delay}ms`;
-        }
-    });
+    animatedElements.forEach(el => observer.observe(el));
 
-    // 3. Cart Logic
+    // 6. Cart Animation & Counter
     let cartCount = 0;
-    const cartBadge = document.querySelector('.cart-btn span');
-    const addToCartBtns = document.querySelectorAll('.btn-card');
+    const cartBadge = document.getElementById('cart-count');
+    const addToCartBtns = document.querySelectorAll('.add-to-cart');
 
     addToCartBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
             cartCount++;
-            cartBadge.textContent = cartCount;
+            if (cartBadge) {
+                cartBadge.textContent = cartCount;
+                cartBadge.style.transform = 'scale(1.3)';
+                setTimeout(() => cartBadge.style.transform = 'scale(1)', 300);
+            }
             
-            // Subtle feedback
-            btn.textContent = 'Added!';
-            btn.style.backgroundColor = 'var(--primary)';
+            const originalText = btn.textContent;
+            btn.textContent = 'Added';
+            btn.style.background = 'var(--primary)';
             btn.style.color = '#000';
             
             setTimeout(() => {
-                btn.textContent = 'Add to Cart';
-                btn.style.backgroundColor = 'transparent';
+                btn.textContent = originalText;
+                btn.style.background = 'transparent';
                 btn.style.color = 'var(--primary)';
             }, 2000);
-
-            // Fly-to-cart animation could be added here
-            console.log(`Item added to cart. Total: ${cartCount}`);
         });
     });
 
-    // 4. Newsletter Simulation
-    const subscribeForm = document.querySelector('.subscribe-form');
+    // 7. Newsletter Simulation
+    const subscribeForm = document.getElementById('newsletter-form');
     if (subscribeForm) {
         subscribeForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            const emailInput = subscribeForm.querySelector('input');
             const btn = subscribeForm.querySelector('button');
+            const originalText = btn.textContent;
             
-            const originalBtnText = btn.textContent;
-            btn.textContent = 'Joining...';
+            btn.textContent = 'Sending...';
             btn.disabled = true;
 
             setTimeout(() => {
-                alert(`Thank you! ${emailInput.emailInput || emailInput.value} has been added to our inner circle.`);
-                btn.textContent = 'Success!';
-                emailInput.value = '';
-                
+                btn.textContent = 'Welcome Aboard';
+                subscribeForm.reset();
                 setTimeout(() => {
-                    btn.textContent = originalBtnText;
+                    btn.textContent = originalText;
                     btn.disabled = false;
                 }, 3000);
             }, 1000);
         });
     }
 
-    // 5. Smooth Scroll for all anchors
+    // 8. Smooth Scrolling with Offset
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -163,51 +137,15 @@ document.addEventListener('DOMContentLoaded', () => {
             
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
-                const headerOffset = 80;
+                const navHeight = navbar ? navbar.offsetHeight : 80;
                 const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                const offsetPosition = elementPosition + window.pageYOffset - navHeight;
 
                 window.scrollTo({
                     top: offsetPosition,
                     behavior: 'smooth'
                 });
             }
-        });
-    });
-
-    // 6. Parallax effect for Hero (Enhanced)
-    const hero = document.querySelector('.hero');
-    const heroContent = document.querySelector('.hero-content');
-    window.addEventListener('scroll', () => {
-        const scroll = window.pageYOffset;
-        if (hero) {
-            hero.style.backgroundPositionY = `${scroll * 0.7}px`;
-            if(heroContent) {
-                heroContent.style.transform = `translateY(${scroll * 0.3}px)`;
-                heroContent.style.opacity = 1 - (scroll / 800);
-            }
-        }
-    });
-
-    // 7. Watch Card Tilt Effect (Subtle)
-    const cards = document.querySelectorAll('.watch-card');
-    cards.forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            
-            const rotateX = (y - centerY) / 20;
-            const rotateY = (centerX - x) / 20;
-            
-            card.style.transform = `perspective(1000px) scale(1.05) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-        });
-        
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = `perspective(1000px) scale(1) rotateX(0) rotateY(0)`;
         });
     });
 });
