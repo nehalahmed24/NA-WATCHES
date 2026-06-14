@@ -2,416 +2,265 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NA WATCHES | Luxury Watchmaking & Timeless Elegance</title>
-    <meta name="description" content="Discover the exquisite collection of NA WATCHES. Precision engineering meets timeless design for the modern connoisseur. Luxury watches for all devices.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>NA WATCHES | Pakistan's #1 Premium Watch Brand</title>
+    <meta name="description" content="Pakistan's most trusted premium watch brand. Hand-assembled masterpieces with nationwide delivery, cash on delivery, and 1-year local warranty.">
     
-    <!-- SEO & Performance -->
-    <link rel="canonical" href="https://nawatches.com">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Google Fonts -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome for Icons -->
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Preloader -->
-    <div id="preloader" class="preloader" aria-hidden="true">
-        <div class="loader-content">
-            <div class="loader-logo">NA WATCHES</div>
-            <div class="loader-bar"></div>
-        </div>
+
+    <!-- Top Announcement Bar -->
+    <div class="announcement-bar" style="background: var(--primary); color: #000; text-align: center; padding: 0.5rem; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;">
+        FREE NATIONWIDE DELIVERY & COD ACROSS PAKISTAN
     </div>
 
-    <!-- Background Elements -->
-    <div class="bg-gradient-overlay" aria-hidden="true"></div>
-    <div class="bg-noise" aria-hidden="true"></div>
-    <div class="bg-spheres" aria-hidden="true">
-        <div class="sphere sphere-1"></div>
-        <div class="sphere sphere-2"></div>
-        <div class="sphere sphere-3"></div>
-    </div>
-
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/923062909400" class="whatsapp-float" target="_blank" aria-label="Order on WhatsApp">
-        <i class="fa-brands fa-whatsapp"></i>
-        <span>Order Now</span>
-    </a>
-
-    <header class="navbar" id="navbar">
-        <div class="container">
-            <a href="#" class="logo" id="main-logo">NA WATCHES</a>
-            <nav class="nav-links" aria-label="Main Navigation">
-                <a href="#collections">Collections</a>
-                <a href="#about">Our Story</a>
-                <a href="#reviews">Reviews</a>
+    <!-- Sticky Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="#" class="logo">NA WATCHES</a>
+            <div class="nav-links" id="nav-links">
+                <a href="#collections">Best Sellers</a>
+                <a href="#why-choose">Why Us</a>
+                <a href="#heritage">Our Story</a>
+                <a href="#faq">FAQ</a>
                 <a href="#contact">Contact</a>
-            </nav>
-            <div class="nav-actions">
-                <div class="search-wrapper" id="search-wrapper">
-                    <input type="text" class="search-input" id="search-input" placeholder="Search..." aria-label="Search watches">
-                    <button class="search-btn" id="search-btn" aria-label="Toggle search"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu" style="background:none; border:none; color:white; font-size:1.5rem; cursor: pointer;">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content" data-aos="fade-up">
+                <span style="color:var(--primary); letter-spacing:4px; text-transform:uppercase; font-size:0.75rem; display:block; margin-bottom:0.8rem; font-weight: 700;">Pakistani Horology</span>
+                <h1>Crafted for the Modern <span>Pakistani</span> Gentleman.</h1>
+                <p>Premium quality watches, hand-assembled in Karachi. Loved by over 10,000+ customers nationwide.</p>
+                <div class="hero-btns">
+                    <a href="#collections" class="btn-gold">Shop Best Sellers</a>
+                    <a href="https://wa.me/923062909400" class="btn-outline">Order on WhatsApp</a>
                 </div>
-                <button class="cart-btn" aria-label="View shopping bag"><i class="fa-solid fa-bag-shopping"></i><span id="cart-count">0</span></button>
-                <button class="menu-toggle" id="menu-toggle" aria-label="Open menu"><i class="fa-solid fa-bars-staggered"></i></button>
             </div>
         </div>
-    </header>
+    </section>
 
-    <!-- Mobile Drawer -->
-    <div class="mobile-drawer" id="mobile-drawer">
-        <div class="drawer-header">
-            <div class="logo">NA WATCHES</div>
-            <button class="close-drawer" id="close-drawer" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
-        </div>
-        <nav class="drawer-links">
-            <a href="#home">Home</a>
-            <a href="#collections">Collections</a>
-            <a href="#about">Our Story</a>
-            <a href="#reviews">Reviews</a>
-            <a href="#contact">Contact</a>
-        </nav>
-        <div class="drawer-footer">
-            <p>03062909400</p>
-            <div class="social-links">
-                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+    <!-- Trust Stats -->
+    <section class="trust-stats">
+        <div class="container">
+            <div class="grid-responsive grid-stats">
+                <div class="stat-card" data-aos="fade-up">
+                    <h3>10K+</h3>
+                    <p>Happy Customers</p>
+                </div>
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+                    <h3>COD</h3>
+                    <p>Cash on Delivery</p>
+                </div>
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Free</h3>
+                    <p>Quick Shipping</p>
+                </div>
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+                    <h3>1 Year</h3>
+                    <p>Local Warranty</p>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="drawer-overlay" id="drawer-overlay"></div>
+    </section>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="hero" id="home">
-            <div class="hero-overlay"></div>
-            <div class="container">
-                <div class="hero-content hero-centered" data-aos="fade-up">
-                    <span class="subtitle">Excellence in every second</span>
-                    <h1>Luxury watches for every moment</h1>
-                    <p>Engineered for the bold. Designed for the eternal. Experience the culmination of Swiss craftsmanship and modern innovation.</p>
-                    <div class="hero-btns">
-                        <a href="#collections" class="btn btn-primary">Shop Collection</a>
-                        <a href="https://wa.me/923062909400" class="btn btn-outline"><i class="fa-brands fa-whatsapp"></i> WhatsApp Order</a>
-                    </div>
-                </div>
+    <!-- Best Sellers -->
+    <section id="collections">
+        <div class="container">
+            <div class="section-header" style="text-align:center; margin-bottom:3rem;">
+                <span style="color:var(--primary); letter-spacing:2px; text-transform:uppercase; font-size:0.75rem;">Trending Now</span>
+                <h2 style="margin-top: 0.5rem;">Best Sellers</h2>
             </div>
-            <div class="hero-scroll" aria-hidden="true">
-                <span>Scroll to explore</span>
-                <div class="mouse"></div>
-            </div>
-        </section>
-
-        <!-- Trust Badges Section -->
-        <section class="trust-badges" id="trust">
-            <div class="container grid-4">
-                <div class="badge-item" data-aos="fade-up">
-                    <i class="fa-solid fa-truck-fast"></i>
-                    <h4>Free Shipping</h4>
-                    <p>On all domestic orders</p>
-                </div>
-                <div class="badge-item" data-aos="fade-up" data-aos-delay="100">
-                    <i class="fa-solid fa-shield-check"></i>
-                    <h4>Secure Payment</h4>
-                    <p>100% encrypted checkout</p>
-                </div>
-                <div class="badge-item" data-aos="fade-up" data-aos-delay="200">
-                    <i class="fa-solid fa-rotate-left"></i>
-                    <h4>Easy Returns</h4>
-                    <p>7-day money back guarantee</p>
-                </div>
-                <div class="badge-item" data-aos="fade-up" data-aos-delay="300">
-                    <i class="fa-solid fa-headset"></i>
-                    <h4>24/7 Support</h4>
-                    <p>Dedicated luxury concierge</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Collections Section -->
-        <section class="collections" id="collections">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Featured Collections</h2>
-                    <p>Our most prestigious timepieces, curated for excellence.</p>
-                </div>
-                
-                <div class="watch-grid">
-                    <!-- Watch Card 1 -->
-                    <article class="watch-card" data-aos="fade-up">
-                        <div class="watch-img">
-                            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=600" alt="The Obsidian Classic" loading="lazy">
-                            <div class="watch-badge">Premium</div>
+            <div class="grid-responsive grid-watches">
+                <!-- Product 1 -->
+                <div class="watch-card" data-aos="fade-up">
+                    <div class="watch-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?auto=format&fit=crop&q=80&w=800" alt="Obsidian Master">
+                    </div>
+                    <div class="watch-info">
+                        <h3>Obsidian Executive Pro</h3>
+                        <div class="watch-specs">
+                            <span>Automatic</span>
+                            <span>42mm Steel</span>
+                            <span>Water Resistant</span>
+                            <span>Sapphire Glass</span>
                         </div>
-                        <div class="watch-info">
-                            <h3>The Obsidian Classic</h3>
-                            <p>Jet Black Dial | Gold Accents</p>
-                            <span class="price">$4,250</span>
-                            <div class="card-actions">
-                                <button class="btn-card add-to-cart">Add to Cart</button>
-                                <a href="https://wa.me/923062909400?text=I'm%20interested%20in%20The%20Obsidian%20Classic" class="btn-whatsapp-sm" aria-label="Order on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Watch Card 2 -->
-                    <article class="watch-card" data-aos="fade-up" data-aos-delay="100">
-                        <div class="watch-img">
-                            <img src="https://images.unsplash.com/photo-1547996160-81dfa63595aa?auto=format&fit=crop&q=80&w=600" alt="Midnight Diver" loading="lazy">
-                            <div class="watch-badge">Best Seller</div>
-                        </div>
-                        <div class="watch-info">
-                            <h3>Midnight Diver</h3>
-                            <p>Deep Blue Bezel | Stainless Steel</p>
-                            <span class="price">$3,800</span>
-                            <div class="card-actions">
-                                <button class="btn-card add-to-cart">Add to Cart</button>
-                                <a href="https://wa.me/923062909400?text=I'm%20interested%20in%20Midnight%20Diver" class="btn-whatsapp-sm" aria-label="Order on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Watch Card 3 -->
-                    <article class="watch-card" data-aos="fade-up" data-aos-delay="200">
-                        <div class="watch-img">
-                            <img src="https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?auto=format&fit=crop&q=80&w=600" alt="NA WATCHES Heritage" loading="lazy">
-                        </div>
-                        <div class="watch-info">
-                            <h3>Heritage Chrono</h3>
-                            <p>Silver Dial | Leather Strap</p>
-                            <span class="price">$2,950</span>
-                            <div class="card-actions">
-                                <button class="btn-card add-to-cart">Add to Cart</button>
-                                <a href="https://wa.me/923062909400?text=I'm%20interested%20in%20Heritage%20Chrono" class="btn-whatsapp-sm" aria-label="Order on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Watch Card 4 -->
-                    <article class="watch-card" data-aos="fade-up" data-aos-delay="300">
-                        <div class="watch-img">
-                            <img src="https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&q=80&w=600" alt="Titanium Pro" loading="lazy">
-                        </div>
-                        <div class="watch-info">
-                            <h3>Titanium Pro</h3>
-                            <p>Brushed Metal | Automatic</p>
-                            <span class="price">$5,100</span>
-                            <div class="card-actions">
-                                <button class="btn-card add-to-cart">Add to Cart</button>
-                                <a href="https://wa.me/923062909400?text=I'm%20interested%20in%20Titanium%20Pro" class="btn-whatsapp-sm" aria-label="Order on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Customer Reviews -->
-        <section class="reviews" id="reviews">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Voices of Excellence</h2>
-                    <p>Real experiences from customers who value precision, craftsmanship, and timeless design.</p>
-                </div>
-                <div class="reviews-grid">
-                    <!-- Review 1 -->
-                    <div class="review-card" data-aos="fade-up">
-                        <div class="review-stars">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="review-text">"I’ve collected watches for years, but NA WATCHES genuinely surprised me. The detailing, weight, and finish feel premium beyond expectations."</p>
-                        <div class="reviewer">
-                            <img src="https://i.pravatar.cc/100?u=collector" alt="Zayan Malik" loading="lazy">
-                            <div>
-                                <h5>Zayan Malik</h5>
-                            </div>
+                        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap: wrap; gap: 10px;">
+                            <span class="price">Rs. 18,500</span>
+                            <a href="https://wa.me/923062909400?text=Inquiry: Obsidian Executive Pro" class="btn-gold" style="padding: 0.8rem 1.5rem; font-size: 0.75rem;">Order Now</a>
                         </div>
                     </div>
-                    <!-- Review 2 -->
-                    <div class="review-card" data-aos="fade-up" data-aos-delay="100">
-                        <div class="review-stars">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="review-text">"This was my first luxury-style watch purchase and I honestly didn’t expect this level of quality. It looks and feels way more expensive than it is."</p>
-                        <div class="reviewer">
-                            <img src="https://i.pravatar.cc/100?u=firstbuyer" alt="James Carter" loading="lazy">
-                            <div>
-                                <h5>James Carter</h5>
-                            </div>
-                        </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="watch-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="watch-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1547996160-81dfa63595aa?auto=format&fit=crop&q=80&w=800" alt="Sea Master">
                     </div>
-                    <!-- Review 3 -->
-                    <div class="review-card" data-aos="fade-up" data-aos-delay="200">
-                        <div class="review-stars">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <div class="watch-info">
+                        <h3>Sea Master Diver</h3>
+                        <div class="watch-specs">
+                            <span>Premium Quartz</span>
+                            <span>44mm Metal</span>
+                            <span>Luminous</span>
+                            <span>Silicon Strap</span>
                         </div>
-                        <p class="review-text">"The design is clean, modern, and elegant. It matches both casual and formal outfits perfectly. I wear it almost every day now."</p>
-                        <div class="reviewer">
-                            <img src="https://i.pravatar.cc/100?u=style" alt="Ayaan Khan" loading="lazy">
-                            <div>
-                                <h5>Ayaan Khan</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Review 4 -->
-                    <div class="review-card" data-aos="fade-up" data-aos-delay="300">
-                        <div class="review-stars">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="review-text">"Order process was smooth and delivery was quicker than expected. Packaging also felt premium and secure."</p>
-                        <div class="reviewer">
-                            <img src="https://i.pravatar.cc/100?u=delivery" alt="Michael Ross" loading="lazy">
-                            <div>
-                                <h5>Michael Ross</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Review 5 -->
-                    <div class="review-card" data-aos="fade-up" data-aos-delay="400">
-                        <div class="review-stars">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="review-text">"Bought it as a gift and the reaction was amazing. It looks like a high-end luxury brand product."</p>
-                        <div class="reviewer">
-                            <img src="https://i.pravatar.cc/100?u=gift" alt="Daniel Smith" loading="lazy">
-                            <div>
-                                <h5>Daniel Smith</h5>
-                            </div>
+                        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap: wrap; gap: 10px;">
+                            <span class="price">Rs. 14,500</span>
+                            <a href="https://wa.me/923062909400?text=Inquiry: Sea Master Diver" class="btn-gold" style="padding: 0.8rem 1.5rem; font-size: 0.75rem;">Order Now</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Heritage Section -->
-        <section class="heritage" id="about">
-            <div class="container grid-2">
-                <div class="heritage-content" data-aos="fade-right">
-                    <h2>A Century of Precision</h2>
-                    <p>Since 1924, NA WATCHES has been at the forefront of watchmaking innovation. Every timepiece is a testament to our commitment to quality, hand-assembled by master watchmakers in our Geneva ateliers.</p>
-                    <ul class="heritage-list">
-                        <li><i class="fa-solid fa-check"></i> Over 100 years of Swiss heritage</li>
-                        <li><i class="fa-solid fa-check"></i> Sustainable luxury materials</li>
-                        <li><i class="fa-solid fa-check"></i> Lifetime mechanical warranty</li>
-                    </ul>
-                    <a href="#" class="btn btn-primary">Explore Our Origin</a>
+    <!-- Why Us -->
+    <section class="why-choose" id="why-choose" style="background: #080808;">
+        <div class="container">
+            <div style="text-align:center; margin-bottom:4rem;">
+                <h2 style="margin-top: 0.5rem;">Why NA WATCHES?</h2>
+            </div>
+            <div class="grid-responsive">
+                <div class="why-item" data-aos="fade-up">
+                    <i class="fa-solid fa-truck-fast" style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                    <h4>Fast Delivery</h4>
+                    <p>Secure nationwide COD within 3-5 working days.</p>
                 </div>
-                <div class="heritage-img" data-aos="fade-left">
-                    <img src="https://images.unsplash.com/photo-1508057198894-247b23fe5ade?auto=format&fit=crop&q=80&w=800" alt="Master watchmaker at work" loading="lazy">
+                <div class="why-item" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fa-solid fa-hand-holding-dollar" style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                    <h4>Cash on Delivery</h4>
+                    <p>Pay only when you receive your order at your doorstep.</p>
+                </div>
+                <div class="why-item" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fa-solid fa-screwdriver-wrench" style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                    <h4>Local Support</h4>
+                    <p>Dedicated Karachi service center for all claims.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Newsletter Section -->
-        <section class="newsletter">
-            <div class="container">
-                <div class="newsletter-box glass" data-aos="zoom-in">
-                    <h2>Join the Legacy</h2>
-                    <p>Subscribe for early access to limited editions and mechanical insights.</p>
-                    <form class="subscribe-form" id="newsletter-form">
-                        <input type="email" placeholder="Your Email Address" required aria-label="Email address">
-                        <button type="submit" class="btn btn-primary">Keep Me Updated</button>
-                    </form>
-                </div>
+    <!-- Reviews -->
+    <section>
+        <div class="container">
+            <div style="text-align:center; margin-bottom:3rem;">
+                <h2>Customer Love</h2>
             </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section class="contact-section" id="contact">
-            <div class="container grid-2">
-                <div class="contact-info" data-aos="fade-right">
-                    <h2>Get in Touch</h2>
-                    <p>Our concierge team is available to assist you with selection and technical inquiries.</p>
-                    <div class="contact-details">
-                        <div class="detail-item">
-                            <i class="fa-solid fa-location-dot"></i>
-                            <div>
-                                <h4>Atelier Address</h4>
-                                <p>f3/1479 Shah Faisal Colony 3, Geneva / Karachi</p>
-                            </div>
-                        </div>
-                        <div class="detail-item">
-                            <i class="fa-solid fa-phone"></i>
-                            <div>
-                                <h4>Direct Line</h4>
-                                <p>+92 306 2909400</p>
-                            </div>
-                        </div>
-                        <div class="detail-item">
-                            <i class="fa-solid fa-envelope"></i>
-                            <div>
-                                <h4>Email Assistant</h4>
-                                <p>assistant@nawatches.com</p>
-                            </div>
+            <div class="reviews-grid">
+                <div class="review-card" data-aos="fade-up">
+                    <p style="font-style: italic; margin-bottom: 1.5rem;">"Exceptional quality. Received in Lahore in 2 days. Packaging was premium."</p>
+                    <div class="reviewer-profile">
+                        <img src="https://i.pravatar.cc/150?u=12" alt="Arsalan">
+                        <div>
+                            <h5 style="color: var(--primary);">Arsalan Khan</h5>
+                            <small style="opacity: 0.6;">Lahore, PK</small>
                         </div>
                     </div>
                 </div>
-                <div class="contact-form-box" data-aos="fade-left">
-                    <form class="contact-form">
-                        <div class="form-group">
-                            <input type="text" placeholder="Full Name" required>
+                <div class="review-card" data-aos="fade-up" data-aos-delay="100">
+                    <p style="font-style: italic; margin-bottom: 1.5rem;">"Best customer service. Resolved my strap issue immediately in Karachi."</p>
+                    <div class="reviewer-profile">
+                        <img src="https://i.pravatar.cc/150?u=15" alt="Osama">
+                        <div>
+                            <h5 style="color: var(--primary);">Osama Sheikh</h5>
+                            <small style="opacity: 0.6;">Karachi, PK</small>
                         </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Email Address" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea placeholder="Your Message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-full">Send Inquiry</button>
-                    </form>
+                    </div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
+    <!-- Our Story -->
+    <section id="heritage" style="background: #080808;">
+        <div class="container">
+            <div class="heritage-grid">
+                <div data-aos="fade-up">
+                    <h2 style="margin-bottom: 1.5rem;">Our Story</h2>
+                    <p style="margin-bottom: 2rem;">Born in a Karachi workshop, NA WATCHES is a testament to Pakistani craftsmanship. We bring international standards to our local community.</p>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <h5>2018</h5>
+                            <p>Founded in Karachi.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h5>2024</h5>
+                            <p>Serving 10k+ Customers.</p>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-up" style="max-width: 100%; overflow: hidden;">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=800" alt="Heritage" style="width: 100%; border: 1px solid var(--border); border-radius: 4px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2>FAQ</h2>
+            </div>
+            <div class="faq-grid" style="max-width: 800px; margin: 0 auto;">
+                <div style="border-bottom: 1px solid var(--border); padding-bottom: 1rem;">
+                    <h5 style="color: var(--primary);">Delivery time?</h5>
+                    <p style="font-size: 0.9rem; opacity: 0.7;">Karachi: 1-2 days. Nationwide: 3-5 days.</p>
+                </div>
+                <div style="border-bottom: 1px solid var(--border); padding-bottom: 1rem;">
+                    <h5 style="color: var(--primary);">COD safety?</h5>
+                    <p style="font-size: 0.9rem; opacity: 0.7;">We use trusted partners like TCS and Leopards.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-brand">
-                    <a href="#" class="logo">NA WATCHES</a>
-                    <p>Defining time for those who dictate it. Precision, Heritage, Excellence.</p>
-                    <div class="social-links">
-                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    </div>
+                <div class="footer-col">
+                    <div class="logo">NA WATCHES</div>
+                    <p style="font-size: 0.85rem; margin-top: 1rem; opacity: 0.7;">A homegrown Pakistani brand dedicated to local horology.</p>
                 </div>
-                <div class="footer-nav">
-                    <h4>Collections</h4>
-                    <a href="#">The Gentleman</a>
-                    <a href="#">Diver Pro</a>
-                    <a href="#">Aviation Elite</a>
-                    <a href="#">Limited Editions</a>
-                </div>
-                <div class="footer-nav">
+                <div class="footer-col">
                     <h4>Assistance</h4>
-                    <a href="#">Shipping & Returns</a>
-                    <a href="#">Warranty Info</a>
-                    <a href="#">Watch Care</a>
-                    <a href="#">Store Locator</a>
-                </div>
-                <div class="footer-nav">
-                    <h4>Legal</h4>
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms & Conditions</a>
-                    <a href="#">Cookie Policy</a>
+                    <p style="font-size: 0.85rem; opacity: 0.7;">WhatsApp: +92 306 2909400</p>
+                    <p style="font-size: 0.85rem; opacity: 0.7;">Email: support@nawatches.pk</p>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 NA WATCHES Horology. All Rights Reserved.</p>
-                <div class="footer-bottom-links">
-                    <span>Designed for Excellence</span>
-                </div>
+            <div style="text-align: center; padding: 2rem 0; border-top: 1px solid var(--border); margin-top: 3rem; font-size: 0.75rem; opacity: 0.5;">
+                &copy; 2026 NA WATCHES. Owned & Operated in Pakistan.
             </div>
         </div>
     </footer>
 
+    <!-- WhatsApp Sticky -->
+    <a href="https://wa.me/923062909400" class="whatsapp-sticky" style="position:fixed; bottom:1.5rem; right:1.5rem; width:50px; height:50px; background:#25D366; color:white; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.5rem; text-decoration:none; z-index:1001; box-shadow:0 8px 24px rgba(37,211,102,0.4);">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
     <script src="script.js"></script>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => entry.isIntersecting && entry.target.classList.add('active'));
+        }, { threshold: 0.1 });
+        document.querySelectorAll('[data-aos]').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>
-
